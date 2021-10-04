@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+    body { 
+      margin: 0;
+      }
+    .header {
+      text-align: center; 
+      }
+    #food-munch-logo {
+      width: 200px;
+      height: 180px;
+      }
+    .carousel-container {
+      background-color: white;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      margin:10px;
+      }
+    .num {
+      color:white;
+      font-size:60px;
+      text-align:right;
+      font-weight:bold;
+      }
+    .banner-section-bg-container {
+      background-image: url("https://i.postimg.cc/pdvx5zZh/foodmunch-banner-bg.png");
+      height:90vh;
+      background-size: cover;
+      }
+    .banner-heading {
+      color: white;
+      font-family: "Roboto";
+      font-size: 45px;
+      font-weight: 300;
+      }
+    .banner-caption {
+      color: #f5f7fa;
+      font-family: "Roboto";
+      font-size: 24px;
+      font-weight: 300;
+      }
+    .wcu-section-heading {
+      color:#FFF7E0;
+      font-family:"Roboto";
+      font-size: 35px;
+      font-weight:bold;
+      text-align:center;
+      }
+    .wcu-section-description {
+      color: white;
+      font-family: "Roboto";
+      font-size: 20px;
+      text-align:center;
+      }
+    .wcu-card {
+      text-align: center;
+      background-color: white;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #e5eaf4;
+      border-radius: 16px;
+      }
+    .wc-sec {
+      background-image:url("https://i.postimg.cc/3wB69m2p/old-brick-black-color-wall-260nw-1605128917.jpg");
+      background-size:cover;
+      height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      }
+    .wcu-card-image {
+      width: 87px;
+      height: 90px;
+      }
+    .icon2 {
+      color:#d0b200;
+      font-size:70px;
+      }
+    .wcu-card-title {
+      color: #323f4b;
+      font-family: "Roboto";
+      font-size: 22px;
+      font-weight: 500;
+      }
+    .wcu-card-description {
+      color: #7b8794;
+      font-family: "Roboto";
+      font-size: 16px;
+      }
+    .offers {
+      color:red;
+      font-style: italic;
+      font-weight: 600;
+    }
+    .bg-image {
+      background-image:url("https://i.postimg.cc/65dTd8nr/MkEnK8.jpg");
+      height:90vh;
+      background-size:cover;
+      }
+    .offer-image {
+      height:200px;
+      width:200px;
+      margin-left:30px;
+      align-self:flex-end;
+      }
+    .highlight {
+      color:yellow;
+      font-style:italic;
+      font-weight:bold;
+      font-family:"Roboto";
+      }
+    .center {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      }
+    .detail {
+      color:white;
+      font-size:30px;
+      font-family:"liber-serif";
+      align-self:flex-end;
+      max-width:600px;
+      text-align:center;
+      }
+    .menu-section-heading {
+      color: red;
+      font-family: "Roboto";
+      font-size: 35px;
+      font-weight: 1000;
+      }
+    .menu-item-image {
+      border-radius: 16px;
+      height:200px;
+      width:200px;
+      }
+    .menu-card-title {
+      color: #323f4b;
+      font-family: "Lobster";
+      font-size: 25px;
+      font-weight: 700;
+      margin-top: 24px;
+      }
+    .menu-item-card {
+      border-radius: 30px;
+      box-shadow: 5px 5px blue,10px 10px green, 15px 15px red ;
+      height:550px;
+      width:250px;
+      background-image: linear-gradient(to top,#F0FFF0,#FAEBD7,#F0E68C);
+      background-clip: text;
+      }
+    .menu-item-card:hover {
+      background-image: linear-gradient(to top,yellow,#DA70D6);
+      }
+    .offers2 {
+      color:red;
+      font-style: italic;
+      font-weight: 600;
+      font-size:20px;
+       }
+    .desc {
+      color:black;
+      font-size:18px;
+      font-family:"Roboto";
+      }
+    .parallax {
+      background-image: url("https://i.postimg.cc/kG1N9x9H/photo-1546069901-ba9599a7e63c.jpg");
+      min-height: 600px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+    .healthy-food-section-heading {
+      color: red;
+      font-family: "Lobster";
+      font-size: 30px;
+      font-weight: 700;
+      padding-top:20px;
+      padding-bottom:10px;
+      }
+    .healthy-food-section-img {
+      width: 270px;
+      margin:20px;
+      }
+    .healthy-food-section-description {
+      color: black;
+      font-family: "sans-serif";
+      font-size: 25px;
+      padding-top:10px;
+      padding-bottom:30px;
+      }
+    .delivery-and-payment-section {
+      background-color:white;
+      }
+    .delivery-and-payment-section-img {
+      width: 270px;
+      margin-top:50px;
+      }
+    .delivery-and-payment-section-heading {
+      color: red;
+      font-family: "Roboto";
+      font-size: 28px;
+      font-weight: 700;
+      }
+    .delivery-and-payment-section-description {
+      color: #5a7184;
+      font-family: "Roboto";
+      font-size: 20px;
+      }
+    .payment-card-img {
+      width: 70px;
+      height: 70px;
+      margin-right: 28px;
+      }
+    .follow-us-section {
+      background-image:linear-gradient(to right,#FFA07A,#FFD700,#ADFF2F);
+      }
+    .follow-us-section-heading {
+      text-align: center;
+      color: #183b56;
+      font-family: "Roboto";
+      font-size: 28px;
+      font-weight: 700;
+      }
+    .follow-us-icon-container {
+      background-color: #faf7e8;
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      margin: 15px;
+      padding-top: 22px;
+      padding-bottom: 14px;
+      padding-right: 16px;
+      padding-left: 22px;
+      }
+    .icon {
+      color: #d0b200;
+      font-size: 35px;
+      }
+    .footer-section {
+      background:url(https://i.postimg.cc/Gt4HngRT/3014609.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      }
+    .footer-section-mail-id {
+      color: white;
+      font-family: "Roboto";
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 20px;
+      }
+    .footer-section-address {
+      color: white;
+      font-family: "Roboto";
+      font-size: 20px;
+      font-weight:bold
+      }
+    #myBtn {
+      display: none; 
+      position: fixed; 
+      bottom: 20px; 
+      right: 30px; 
+      z-index: 99; 
+      border: none;
+      outline: none;
+      background-color:#DAA520; 
+      color: white; 
+      cursor: pointer; 
+      padding: 15px; 
+      border-radius: 10px; 
+      font-size: 18px; 
+      }
+    #myBtn:hover {
+      background-color: #555;
+      }
+</style>
+</head>
+<body>
+    <div class="header">
+      <img src="https://i.postimg.cc/XYkFCcbt/unnamed.png" id="food-munch-logo"/>
+    </div>
+
+    <div class="carousel-container" id="carouselSection">
+    <div class="container">
+    <div class="row">
+    <div class="col-12">
+        <div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner col-12">
+
+                <div class="carousel-item active">
+                <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+                <div class="text-center">
+                    <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
+                    <p class="banner-caption mb-4">Eat Smart & Healthy</p>
+                </div>
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="num">01</h1>
+                </div>
+                </div>
+
+                <div class="carousel-item col-12">
+                <div class="container wc-sec">
+                <div class="row">
+                    <div class="col-12 ">
+                        <h1 class="wcu-section-heading">Why Choose Us?</h1>
+                        <p class="wcu-section-description">
+                            We use both original recipes and classic versions of famous food items.</p>
+                    </div>
+                    <div class="col-3">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://i.postimg.cc/02drWkBw/food-serve.png" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Food Service</h1>
+                        <p class="wcu-card-description">
+                            Experience fine dining at the comfort of your home. All our
+                            orders are carefully packed and arranged to give you the nothing
+                            less than perfect.</p>
+                    </div>
+                    </div>
+                    <div class="col-3">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://i.postimg.cc/QCZxmwgm/fruits-img.png" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Fresh Food</h1>
+                        <p class="wcu-card-description">
+                            The Fresh Food group provides fresh-cut fruits and vegetables
+                            directly picked from our partner farms and farm houses so that
+                            you always get them tree to plate.</p>
+                    </div>
+                    </div>
+                    <div class="col-3">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://i.postimg.cc/28w8dH1d/offers-img.png" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Best Offers</h1>
+                        <p class="wcu-card-description">
+                            Food Coupons & Offers upto <span class="offers">50% OFF</span>
+                             and Exclusive Promo Codes on All Online Food Orders.</p>
+                    </div>
+                    </div>
+                    <div class="col-3">
+                    <div class="wcu-card p-3 mb-3">
+                        <i class="fas fa-truck-moving icon2"></i>
+                        <h1 class="wcu-card-title mt-3">Free Home Delivery</h1>
+                        <p class="wcu-card-description">
+                            we deliver to your door step which is the in limit of 50km distance so that you can 
+                            easily enjoy your food at home.</p>
+                    </div>
+                    </div>
+                </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="num">02</h1>
+                    </div>
+                </div>
+                </div>
+
+                <div class="carousel-item bg-image col-12">
+                <div class="center p-5">
+                    <img src="https://i.postimg.cc/9MNy56zW/8619caee183b3f83921f2748a93b1a5e-w200.gif" class="offer-image">
+                    <p class="detail">
+                        Best offers on items for limited time </br><span class="highlight">HURRY UP!</span>
+                        If you are in search of <span class="highlight">ORGANIC FOOD RESTAURANT</span> 
+                        This is the best website to order.</br> Explore the menu,Order your favourite food easily,
+                        Enjoy the taste and Stay Healthy.</p>
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="num">03</h1>
+                </div>
+                </div>
+            </div>
+        </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">Explore Menu</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card p-3 mb-3">
+                        <img src="https://i.postimg.cc/hPzrhTjs/gbkiutf8-chicken-tikka-650-650x400-09-April-19.jpg" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Starters</h1>
+                        <p class="desc">A starter is a small quantity of food that is served as the first course of a meal.
+                                        These tit-bits of food are known to increase appetite.</p>
+                        <p class="offers2">20% PRICE OFF</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card  p-3 mb-3">
+                        <img src="https://i.postimg.cc/9FLD3nVN/presentation-7e349e18-661d-4904-8707-8d6acbe48576.jpg" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Salads and Soups</h1>
+                        <p class="desc"> Salad is a cold dish of various mixtures of raw or cooked vegetables,
+                                         Soup is a liquid food,served warm that is made by combining vegetables with stock and water.</p>
+                        <p class="offers2">10% PRICE OFF</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card  p-3 mb-3">
+                        <img src="https://i.postimg.cc/DzTkx7HV/instant-pot-chicken-biryani-easy-pour-cook.jpg" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Main Course</h1>
+                        <p class="desc">A main course is the featured or primary dish in a meal consisting of several courses. 
+                                        The main dish is usually the heaviest,heartiest,and most complex or substantive dish on a menu.</p>
+                        <p class="offers2">50% PRICE OFF</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card p-3 mb-3">
+                        <img src="https://i.postimg.cc/FH2sNt6G/kk-ice-cream-full-mood-720x720.jpg" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Desserts</h1>
+                        <p class="desc">Dessert, the last course of a meal.Dessert is likely to consist of pastry, cake, ice cream, 
+                                        pudding, or fresh or cooked fruit.If there is no usual sweet course tea, or coffee constitute the end of the meal.</p>
+                        <p class="offers2">30% PRICE OFF</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="parallax"></div>
+        <div class="col-12" style="background-color:#AFEEEE;margin-bottom:30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <div class="text-center">
+                        <img src="https://i.postimg.cc/kMLYWrLz/recyclable-bag-fresh-vegetables-blue-summer-sky-background-75891-468.jpg" class="healthy-food-section-img" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <h1 class="healthy-food-section-heading">Fresh, Healthy, Organic, Delicious Fruits</h1>
+                    <p class="healthy-food-section-description">
+                        Say no to harmful chemicals and go fully organic with our range offresh fruits and veggies.
+                        Pamper your body and your senses with the true and unadulterated gifts from mother nature.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 order-1 order-md-2">
+                    <div class="text-center">
+                        <img src="https://i.postimg.cc/G2mYB2cY/images.png" class="delivery-and-payment-section-img" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 order-2 order-md-1">
+                    <h1 class="delivery-and-payment-section-heading">Delivery and Payment</h1>
+                    <p class="delivery-and-payment-section-description">
+                        Enjoy hassle-free payment with the plenitude of payment options
+                        available for you. Get live tracking and locate your food on a
+                        live map. It's quite a sight to see your food arrive to your door.
+                        Plus, you get a 5% discount on every order every time you pay
+                        online.
+                    </p>
+                    <div class="mt-3">
+                        <img src="https://i.postimg.cc/hjLwG2th/download-3.jpg" class="payment-card-img" />
+                        <img src="https://i.postimg.cc/28ct3brd/download-2.png" class="payment-card-img" />
+                        <img src="https://i.postimg.cc/RCGsb66r/download-4.png" class="payment-card-img" />
+                        <img src="https://i.postimg.cc/htMVKTng/download-5.png" class="payment-card-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="follow-us-section-heading">Follow Us</h1>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="follow-us-icon-container">
+                            <i class="fab fa-twitter icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                             <i class="fab fa-instagram icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                            <i class="fab fa-facebook icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="footer-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" style="color:#fff;margin: 40px auto;background-color:rgba(255,255,255,0.06);
+                    border: 1px solid rgba(255,255,255,0.1);width: 100%;border-radius: 15px;padding: 32px;backdrop-filter: blur(10px);">
+                    <h1 class="footer-section-mail-id">orderfood@foodmunch.com</h1>
+                    <p class="footer-section-address">123 Ayur Vigyan Nagar, New Delhi, India.</p>
+                    <p class="footer-section-address">Contact No:+91-8075367288,+91-8075369278</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> Go to top</button>
+    <script src="index.js"></script>
+</body>
+</html>
